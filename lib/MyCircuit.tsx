@@ -66,20 +66,53 @@ export const FTDIBasic3v3 = () => (
     <trace path={[".R2 > port.right", ".LED2 > port.left"]} />
     <trace path={[".LED1 > port.right", ".U1 > .TXLED"]} />
     <trace path={[".LED2 > port.right", ".U1 > .RXLED"]} />
-    <netalias net="GND" center={[-3, 4]} rotation="180deg" />
+    <netalias net="GND" center={[-2, 4]} rotation="180deg" />
     <netalias net="GND" center={[-5, 3]} rotation="180deg" />
     <netalias net="GND" center={[-6, 3]} rotation="180deg" />
     <netalias net="GND" center={[-7, 3]} rotation="180deg" />
     <netalias net="GND" center={[-8, 2]} rotation="180deg" />
-    <component>
+    {/* <netalias net="5V" center={[-8, -8]} /> */}
+    <bug
+      name="U2"
+      port_arrangement={{
+        left_size: 0,
+        right_size: 4,
+      }}
+      center={[-10, 0]}
+      port_labels={{
+        "1": "GND",
+        "2": "VBUS",
+        "3": "D-",
+        "4": "D+",
+      }}
+    />
+    <trace path={[".U1 > .GND21", ".GND"]} />
+    <trace path={[".U1 > .GND18", ".GND"]} />
+    <trace path={[".U1 > .GND7", ".GND"]} />
+    <trace path={[".U1 > .AGND", ".GND"]} />
+    {/* <bug
+      name="USB"
+      port_arrangement={{
+        left_size: 4,
+        right_size: 4,
+      }}
+      port_labels={{
+        "1": "GND",
+        "2": "VBUS",
+        "3": "D-",
+        "4": "D+",
+      }}
+    /> */}
+    {/* <component>
       <schematicbox
         name="USB"
         center={[-9, 0]}
         type="schematic_box"
         drawing_type="box"
-        width={2}
-        height={2}
+        width={4}
+        height={4}
+
       />
-    </component>
+    </component> */}
   </group>
 )
