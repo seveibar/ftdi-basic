@@ -14,8 +14,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@tscircuit/builder": "^1.5.5",
+    "@tscircuit/builder": "^1.5.10",
     "@tscircuit/cli": "^0.0.33",
-    "@tscircuit/react-fiber": "^1.0.7"
+    "@tscircuit/react-fiber": "^1.0.10"
   }
 }

@@ -86,33 +86,36 @@ export const FTDIBasic3v3 = () => (
         "4": "D+",
       }}
     />
+    <bug
+      name="JP1"
+      center={[8, 0]}
+      port_arrangement={{
+        left_size: 6,
+      }}
+      port_labels={{
+        1: "GND",
+        2: "CTS",
+        3: "POWER",
+        4: "TX0",
+        6: "DTR",
+      }}
+    />
     <trace path={[".U1 > .GND21", ".GND"]} />
     <trace path={[".U1 > .GND18", ".GND"]} />
     <trace path={[".U1 > .GND7", ".GND"]} />
     <trace path={[".U1 > .AGND", ".GND"]} />
-    {/* <bug
-      name="USB"
-      port_arrangement={{
-        left_size: 4,
-        right_size: 4,
-      }}
-      port_labels={{
-        "1": "GND",
-        "2": "VBUS",
-        "3": "D-",
-        "4": "D+",
-      }}
-    /> */}
-    {/* <component>
-      <schematicbox
-        name="USB"
-        center={[-9, 0]}
-        type="schematic_box"
-        drawing_type="box"
-        width={4}
-        height={4}
-
-      />
-    </component> */}
+    <capacitor
+      name="C2"
+      capacitance="0.1uF"
+      center={[-7, 1]}
+      rotation="90deg"
+    />
+    <capacitor name="C5" capacitance="10uF" center={[-6, 1]} rotation="90deg" />
+    <capacitor
+      name="C1"
+      capacitance="0.1uF"
+      center={[-5, 1]}
+      rotation="90deg"
+    />
   </group>
 )
