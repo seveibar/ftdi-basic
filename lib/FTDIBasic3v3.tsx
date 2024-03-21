@@ -1,3 +1,5 @@
+import { SOIC } from "@tscircuit/footprints"
+
 export const FTDIBasic3v3 = () => (
   <group>
     <bug
@@ -130,5 +132,9 @@ export const FTDIBasic3v3 = () => (
 
     <trace path={[".DM", ".U1 > .USBDM"]} />
     <trace path={[".DP", ".U1 > .USBDP"]} />
+
+    <component pcb_x={6} pcb_y={0} name="SJ2">
+      <SOIC pad_count={3} row_count={1} />
+    </component>
   </group>
 )

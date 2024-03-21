@@ -1,1 +1,1 @@
-export * from "./lib/MyCircuit"
+export * from "./lib/FTDIBasic3v3"

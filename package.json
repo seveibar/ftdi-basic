@@ -16,6 +16,7 @@
   "dependencies": {
     "@tscircuit/builder": "^1.5.10",
     "@tscircuit/cli": "^0.0.33",
+    "@tscircuit/footprints": "^0.0.13",
     "@tscircuit/react-fiber": "^1.0.10"
   }
 }
