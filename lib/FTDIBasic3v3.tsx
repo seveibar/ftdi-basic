@@ -82,8 +82,8 @@ export const FTDIBasic3v3 = () => (
       port_labels={{
         "1": "GND",
         "2": "VBUS",
-        "3": "D-",
-        "4": "D+",
+        "3": "DM",
+        "4": "DP",
       }}
     />
     <bug
@@ -97,6 +97,7 @@ export const FTDIBasic3v3 = () => (
         2: "CTS",
         3: "POWER",
         4: "TX0",
+        5: "RXT",
         6: "DTR",
       }}
     />
@@ -117,5 +118,17 @@ export const FTDIBasic3v3 = () => (
       center={[-5, 1]}
       rotation="90deg"
     />
+    <trace path={[".VBUS", ".C2 > port.left"]} />
+    <trace path={[".GND", ".C2 > port.right"]} />
+    <trace path={[".C5 > port.left", ".VBUS"]} />
+    <trace path={[".C5 > port.right", ".GND"]} />
+    <netalias net="3v3" center={[-5, -2]} />
+    <trace path={[".C1 > port.left", ".3v3"]} />
+    <trace path={[".C1 > port.right", ".GND"]} />
+    <netalias net="5v5" center={[-4, -2]} />
+    <trace path={[".VBUS", ".5v5"]} />
+
+    <trace path={[".DM", ".U1 > .USBDM"]} />
+    <trace path={[".DP", ".U1 > .USBDP"]} />
   </group>
 )
